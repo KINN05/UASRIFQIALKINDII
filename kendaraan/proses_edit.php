@@ -29,15 +29,15 @@ if ($nama_foto != "") {
     #3. Query Insert (proses tambah data)
     $query = "UPDATE kendaraan SET merks_id='$merk', tipes_id='$tipe', nama_unit='$nama_unit', 
     no_rangka='$no_rangka', tahun_produksi='$tahun', harga_jual='$harga', status_stok='$statusk',  foto_unit='$nama_foto' 
-    WHERE id='$id'";
+    WHERE id_kendaraan='$id'";
 
     #tambahkan foto
     move_uploaded_file($tmp_foto, "../fotosiswa/$nama_foto");
 } else {
     #3. Query Insert (proses edit data)
-    $query = "UPDATE biodata SET nama='$nama', nisn='$nisn', tempat_lahir='$t_lahir', 
-    tgl_lahir='$tgl_lahir', alamat='$alamat', email='$email', jenis_kelamin='$jk',  jurusans_id='$jur', gelombangs_id='$gel' 
-    WHERE id='$id'";
+    $query = "UPDATE kendaraan SET merks_id='$merk', tipes_id='$tipe', nama_unit='$nama_unit', 
+    no_rangka='$no_rangka', tahun_produksi='$tahun', harga_jual='$harga', status_stok='$statusk',  foto_unit='$nama_foto' 
+    WHERE id_kendaraan='$id'";
 }
 
 $tambah = mysqli_query($koneksi, $query);
